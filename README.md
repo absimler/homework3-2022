@@ -3,6 +3,8 @@ Homework \#3: Binomial regression
 
 **Homework 3 is due at 11:59pm on February 15th**
 
+You may submit your homework by modifying the blank R script above (Homework 3 submission.R) or the blank R Markdown document (Homework 3 submission Rmarkdown version.RmD) above... or you can create your own script from scratch -- just be sure to label it clearly if you do so.
+
 ## Question 1: Probability of independent events
 
 In a population of guppies, 35 are drab-colored and 65 are brightly-colored.
