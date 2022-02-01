@@ -50,13 +50,13 @@ head(bats)
 
 **2a) (2 pts)** Fit a glm assessing the relationship between the probability of *Myotis macropus* occupancy at a site (myotis) and housing density (DWELL). Plot the predictions of your glm, with 95% CIs, along with the raw data.
 
-**2c) (2 pts)** Examine the plotted model prediction and the coefficients from your fitted model. How would you describe the relationship between urbanization and occurrence of *Myotis macropus*?
+**2b) (2 pts)** Examine the plotted model prediction and the coefficients from your fitted model. How would you describe the relationship between urbanization and occurrence of *Myotis macropus*?
 
-**2d) (2 pts)** At approximately what level of housing density does urbanization have the strongest effect on probability of *Myotis* occupancy?
+**2c) (2 pts)** At approximately what level of housing density does urbanization have the strongest effect on probability of *Myotis* occupancy?
 
-**2e) (2 pts)** Using plogis() and coef(), what is the expected probability of *Myotis* occupancy in areas without any houses?
+**2d) (2 pts)** Using plogis() and coef(), what is the expected probability of *Myotis* occupancy in areas without any houses?
 
-**2f) (4 pts)** Fit a second glm assessing the relationship between the probability of *Mormopterus rideri* occupancy (mormo) and housing density. How does the "baseline" probability of occurrence differ between these two bat species (myotis & mormo)? How does the impact of urbanization differ between the two species?
+**2e) (4 pts)** Fit a second glm assessing the relationship between the probability of *Mormopterus rideri* occupancy (mormo) and housing density. How does the "baseline" probability of occurrence differ between these two bat species (myotis & mormo)? How does the impact of urbanization differ between the two species?
 
 <img src="mrideri.jpg" width="400px" />
 
