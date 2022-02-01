@@ -56,11 +56,11 @@ head(bats)
 
 **2e) (2 pts)** Using plogis() and coef(), what is the expected probability of *Myotis* occupancy in areas without any houses?
 
-**2f) (4 pts)** Fit a second glm assessing the relationship between the probability of *Mormopterus ridei* occupancy (mormo) and housing density. How does the "baseline" probability of occurrence differ between these two bat species (myotis & mormo)? How does the impact of urbanization differ between the two species?
+**2f) (4 pts)** Fit a second glm assessing the relationship between the probability of *Mormopterus rideri* occupancy (mormo) and housing density. How does the "baseline" probability of occurrence differ between these two bat species (myotis & mormo)? How does the impact of urbanization differ between the two species?
 
-<img src="mridei.jpg" width="400px" />
+<img src="mrideri.jpg" width="400px" />
 
-Above: *Mormopterus ridei*
+Above: *Mormopterus rideri*
 
 ## Question 3: Simulating binomial data
 
