@@ -44,13 +44,13 @@ head(bats)
     ## 5 5       5  High  338955 5819634  7.285  9.7      1     0
     ## 6 6       6  High  339345 5818973  7.058  6.4      1     0
 
-**SITEID**= An ID number for each recording site
-**XCOORD / YCOORD**= Coordinate location for each site
-**BIO** = the bioregion of the site (a category)
-**TREE** = Percentage tree cover within 500 m of the bat call detector
-**DWELL**= Mean gross dwelling density per hectare within 500 m calculated from census data, as a measurement of urbanization.
-**myotis**= Occupancy data for *Myotis macropus*, with 1 indicating that species was detected at that site.
-**mormo**= Occupancy data for *Mormopterus ridei*, with 1 indicating that species was detected at that site.
+- **SITEID**= An ID number for each recording site
+- **XCOORD / YCOORD**= Coordinate location for each site
+- **BIO** = the bioregion of the site (a category)
+- **TREE** = Percentage tree cover within 500 m of the bat call detector
+- **DWELL**= Mean gross dwelling density per hectare within 500 m calculated from census data, as a measurement of urbanization.
+- **myotis**= Occupancy data for *Myotis macropus*, with 1 indicating that species was detected at that site.
+- **mormo**= Occupancy data for *Mormopterus ridei*, with 1 indicating that species was detected at that site.
 
 **2a) (2 pts)** Fit a glm assessing the relationship between the probability of *Myotis macropus* occupancy at a site (myotis) and housing density (DWELL). Plot the predictions of your glm, with 95% CIs, along with the raw data.
 
