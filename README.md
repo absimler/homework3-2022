@@ -23,7 +23,7 @@ Above: Color variation in Venezuelan guppies (*Poecilia reticulata*)
 
 ## Question 2: Responses of insectivorous bats to urbanization?
 
-<img src="myotis.jpg" width="400px" />
+<img src="myotis.JPG" width="400px" />
 
 Above: *Myotis macropus*
 
