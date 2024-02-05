@@ -1,35 +1,48 @@
 Homework \#3: Binomial regression
 ================
 
-**Homework 3 is due at 11:59pm on February 15th**
-
-You may submit your homework by modifying the blank R script above (Homework 3 submission.R) or the blank R Markdown document (Homework 3 submission Rmarkdown version.RmD) above... or you can create your own script from scratch -- just be sure to label it clearly if you do so.
-
-All of the questions for this assignment can be found below. All datasets are within this repository.
-
 ## Question 1: Probability of independent events
 
-In a population of guppies, 35 are drab-colored and 65 are brightly-colored.
+In a population of guppies, 35 are drab-colored and 65 are
+brightly-colored.
 
-**1a) (2pts)** You catch 10 guppies in a net, one at a time, throwing each one back. What is the probability that exactly 7 of them will be brightly-colored, assuming all guppies are equally likely to be caught in your net? Calculate the probability in R and annotate each step of your calculation.
+**1a) (3pts)** You catch 10 guppies in a net, one at a time, throwing
+each one back. What is the probability that exactly 7 of them will be
+brightly-colored, assuming all guppies are equally likely to be caught
+in your net? Calculate the probability in R and annotate each step of
+your calculation.
 
-**1b) (2pts)** What is the probability that first seven guppies caught will be brightly-colored, and the last three will be drab colored? What is the difference between this calculation and the previous one?
+**1b) (3pts)** What is the probability that first seven guppies caught
+will be brightly-colored, and the last three will be drab colored? What
+is the difference between this calculation and the previous one?
 
 <img src="Poecilia_reticulata.jpg" width="400px" />
 
 Above: Color variation in Venezuelan guppies (*Poecilia reticulata*)
 
-## Question 2: Responses of insectivorous bats to urbanization
+## Question 2: Responses of insectivorous bats to urbanization?
 
-<img src="myotis.JPG" width="400px" />
+<img src="myotis.jpg" width="400px" />
 
 Above: *Myotis macropus*
 
-The dataset "bats\_Caryletal2016.csv" (in this repository) is a subset of a real dataset, published in *Journal of Applied Ecology*:
+The dataset “bats_Caryletal2016.csv” (in this repository) is a subset of
+a real dataset, published in *Journal of Applied Ecology*:
 
-*Caryl, Fiona M.; Lumsden, Linda F.; van der Ree, Rodney; Wintle, Brendan A. (2016), Functional responses of insectivorous bats to increasing housing density support 'land-sparing' rather than ‘land-sharing’ urban growth strategies.* <https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/1365-2664.12549>
+*Caryl, Fiona M.; Lumsden, Linda F.; van der Ree, Rodney; Wintle,
+Brendan A. (2016), Functional responses of insectivorous bats to
+increasing housing density support ‘land-sparing’ rather than
+‘land-sharing’ urban growth strategies.*
+<https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/1365-2664.12549>
 
-The authors of this study wanted to know how increased urbanization impacted the occurrence of 12 different Australian bat species, in the area around Melbourne. They recorded nightly bat calls at 172 sites, and based on the distinct call patterns associated with different species, determined whether each species was present. A truncated version of this dataset is in this repository, showing the occupancy data they collected for *Myotis macropus* (Large-footed bat) and *Mormopterus ridei* (Ride's free-tailed bat), as well as three of their measured covariates:
+The authors of this study wanted to know how increased urbanization
+impacted the occurrence of 12 different Australian bat species, in the
+area around Melbourne. They recorded nightly bat calls at 172 sites, and
+based on the distinct call patterns associated with different species,
+determined whether each species was present. A truncated version of this
+dataset is in this repository, showing the occupancy data they collected
+for *Myotis macropus* (Large-footed bat) and *Mormopterus ridei* (Ride’s
+free-tailed bat), as well as three of their measured covariates:
 
 ``` r
 bats <- read.csv("bats_Caryletal2016.csv")
@@ -44,36 +57,41 @@ head(bats)
     ## 5 5       5  High  338955 5819634  7.285  9.7      1     0
     ## 6 6       6  High  339345 5818973  7.058  6.4      1     0
 
-- **SITEID**= An ID number for each recording site
-- **XCOORD / YCOORD**= Coordinate location for each site
-- **BIO** = the bioregion of the site (a category)
-- **TREE** = Percentage tree cover within 500 m of the bat call detector
-- **DWELL**= Mean gross dwelling density per hectare within 500 m calculated from census data, as a measurement of urbanization.
-- **myotis**= Occupancy data for *Myotis macropus*, with 1 indicating that species was detected at that site.
-- **mormo**= Occupancy data for *Mormopterus ridei*, with 1 indicating that species was detected at that site.
+**BIO** = the bioregion of the site (a category)  
+**TREE** = Percentage tree cover within 500 m of the bat call detector  
+**DWELL**= Mean gross dwelling density per hectare within 500 m
+calculated from census data, as a measurement of urbanization.  
+**myotis**= Occupancy data for *Myotis macropus*, with 1 indicating that
+species was detected at that site.  
+**mormo**= Occupancy data for *Mormopterus ridei*, with 1 indicating
+that species was detected at that site.
 
-**2a) (2 pts)** Fit a glm assessing the relationship between the probability of *Myotis macropus* occupancy at a site (myotis) and housing density (DWELL). Plot the predictions of your glm, with 95% CIs, along with the raw data.
+**2a) (2 pts)** Run a glm assessing the relationship between the
+probability of *Myotis macropus* occupancy at a site (myotis) and
+housing density (DWELL). Display your parameter estimates on the
+probability scale.
 
-**2b) (2 pts)** Examine the plotted model prediction and the coefficients from your fitted model. How would you describe the relationship between urbanization and occurrence of *Myotis macropus*?
+**2b) (4 pts)** Plot the results of your glm, along with the raw data.
+How would you describe the relationship between urbanization and
+occurrence of *Myotis macropus*? At approximately what level of housing
+density does urbanization have the strongest effect on probability of
+*Myotis* occupancy?
 
-**2c) (2 pts)** At approximately what level of housing density does urbanization have the strongest effect on probability of *Myotis* occupancy?
-
-**2d) (2 pts)** Using plogis() and coef(), what is the expected probability of *Myotis* occupancy in areas without any houses?
-
-**2e) (4 pts)** Fit a second glm assessing the relationship between the probability of *Mormopterus rideri* occupancy (mormo) and housing density. How does the "baseline" probability of occurrence differ between these two bat species (myotis & mormo)? How does the impact of urbanization differ between the two species?
-
-<img src="mrideri.jpg" width="400px" />
-
-Above: *Mormopterus rideri*
+**2c) (3 pts)** Run a second glm assessing the relationship between the
+probability of *Mormopterus ridei* occupancy (mormo) and housing
+density, and plot its results. How does overall probability of
+occurrence and the impact of urbanization differ between these two bat
+species (myotis & mormo)?
 
 ## Question 3: Simulating binomial data
 
-During our unit on linear regression, we learned how to simulate normally distributed data, using the function rnorm(), as shown below:
+During our unit on linear regression, we learned how to simulate
+normally distributed data, using the function rnorm(), as shown below:
 
 ``` r
 # Code for simulating a normally distributed dataset:
 n=100 # sample size
-predictor<-runif(n, min=0, max=1) #generate predictor variable w/uniform distrib.
+water_quality<-runif(n, min=0, max=1) #generate predictor variable w/uniform distrib.
 
 #create slope, intercept, sigma:
 slope<-5
@@ -81,14 +99,13 @@ intercept<-20
 sigma<-0.2
 
 ## generate normally-distributed response variable:
-response<-rnorm(n, mean=intercept+slope*predictor, sd=sigma) 
-
-plot(response~predictor)
+fish_weight<-rnorm(n, mean=intercept+slope*water_quality, sd=sigma) 
 ```
 
-![](homework3rmarkdown_files/figure-markdown_github/unnamed-chunk-4-1.png)
-
-You can simulate binomially distributed data (\# successes / \# trials), using the function rbinom(), which requires the following parameters: probability of success (pr), the \# of trials in your design (trials), and the sample size (n).
+You can simulate binomially distributed data (a series of successes
+measured from a set number of trials), using the function rbinom(),
+which requires you to input the probability and the \# of trials in your
+scenario, as below:
 
 ``` r
 n <- 500 # number of simulated draws from the binomial that you will be taking
@@ -96,18 +113,28 @@ pr <- 0.2 # Set the probability
 trials <- 10 # Set the number of trials
 
 y <- rbinom(n, trials, pr)
-# y will contain the number of successes (a discrete integer value) out of the number of trials assigned above.
+# y will contain a series successes, created by taking draws from the binomial distribution that you have described with "trials" and "pr."
 ```
 
-**3a) (1 pts)** Briefly (1 sentence) describe a binary (0,1) variable that you might measure in your field or in your own research, and a predictor variable it might be correlated with.
+**3a) (1 pts)** Briefly (1 sentence) describe a binary variable that you
+might measure in your field or in your own research, and a predictor
+variable it might respond to.
 
-**3b) (4 pts)** Simulate the binary response variable you describe above, using the binomial distribution with 1 trial. Use the following steps:
-- Step 1) Simulate a predictor variable using runif() or sample().
-- Step 2) Assign a value for the intercept and slope and create the deterministic portion of your model, for "p". Be sure to apply the logistic function to the deterministic portion of your model, to convert to the probability scale.
-- Step 3) Use rbinom to simulate draws from a binomial distribution, using the deterministic model for the probability of success and trials = 1.
+**3b) (3 pts)** Simulate a dataset from the binomial distribution, using
+the following steps:  
+Step 1) Simulate a predictor variable using runif or seq.  
+Step 2) Decide on a value for the intercept and slope and create the
+deterministic portion of your model.  
+Step 3) Use rbinom to simulate draws from a binomial distribution, using
+the deterministic model. Be sure to apply the logistic function to the
+deterministic portion of your model, before using rbinom.
 
-Examine the values for your response variable. Did your dataset contain all 1s? Or all 0s? If so, describe why this was the case. Experiment with values of intercept and slope until you obtain a response that contains a combination of 0s and 1s.
+**3c) (2 pts)** Plot your simulated response against your simulated
+predictor variable.
 
-**3c) (1 pts)** Plot your simulated response against your simulated predictor variable.
+**3d) (2 pts)** Run a binomial glm on your simulated data. How do your
+parameter estimates compare to the values you used to simulate this
+data?
 
-**3d) (2 pts)** Fit a binomial glm on your simulated data. Interpret the effect size of your slope by calculating the difference between a maximum and minimum value of your predictor variables using the inverse logit transformation/logistic function. Write a sentence about the biological meaning of the effect size.
+**3e) (2pts)** What role is the logit transformation/logistic function
+playing in the steps of your data simulation?
