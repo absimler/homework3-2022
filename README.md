@@ -14,7 +14,8 @@ your calculation.
 
 **1b) (3pts)** What is the probability that first seven guppies caught
 will be brightly-colored, and the last three will be drab colored? What
-is the difference between this calculation and the previous one?
+is the difference between this calculation and the previous one, based
+on the probability principles we discussed in class?
 
 <img src="Poecilia_reticulata.jpg" width="400px" />
 
@@ -22,7 +23,7 @@ Above: Color variation in Venezuelan guppies (*Poecilia reticulata*)
 
 ## Question 2: Responses of insectivorous bats to urbanization?
 
-<img src="myotis.JPG" width="400px" />
+<img src="myotis.jpg" width="400px" />
 
 Above: *Myotis macropus*
 
@@ -66,22 +67,28 @@ species was detected at that site.
 **mormo**= Occupancy data for *Mormopterus ridei*, with 1 indicating
 that species was detected at that site.
 
-**2a) (2 pts)** Run a glm assessing the relationship between the
-probability of *Myotis macropus* occupancy at a site (myotis) and
-housing density (DWELL). Display your parameter estimates on the
-probability scale.
+**2a) (2 pts)** Fit a binomial glm assessing the relationship between
+the probability of *Myotis macropus* occupancy at a site (myotis) and
+housing density (DWELL). Interpret the meaning of your parameter
+estimates on the probability scale using one of the approaches discussed
+in class.
 
-**2b) (4 pts)** Plot the results of your glm, along with the raw data.
-How would you describe the relationship between urbanization and
-occurrence of *Myotis macropus*? At approximately what level of housing
-density does urbanization have the strongest effect on probability of
-*Myotis* occupancy?
+**2b) (2 pts)** Assess model fit, using one of the approaches for
+binomial glms discussed in class. What does your fit metric indicate
+about how much of the variation in your data the model captures?
 
-**2c) (3 pts)** Run a second glm assessing the relationship between the
+**2c) (2 pts)** Plot your glm’s mean prediction line with 95% confidence
+intervals, along with the raw data. How would you describe the
+relationship between urbanization and occurrence of *Myotis macropus*?
+At approximately what level of housing density does urbanization have
+the strongest effect on probability of *Myotis* occupancy?
+
+**2d) (3 pts)** Fit a second glm assessing the relationship between the
 probability of *Mormopterus ridei* occupancy (mormo) and housing
-density, and plot its results. How does overall probability of
-occurrence and the impact of urbanization differ between these two bat
-species (myotis & mormo)?
+density, assess model fit, and plot its results. How does overall
+probability of occurrence and the impact of urbanization differ between
+these two bat species (myotis & mormo)? Compare and contrast the results
+of the two models.
 
 ## Question 3: Simulating binomial data
 
@@ -120,21 +127,26 @@ y <- rbinom(n, trials, pr)
 might measure in your field or in your own research, and a predictor
 variable it might respond to.
 
-**3b) (3 pts)** Simulate a dataset from the binomial distribution, using
+**3b) (4 pts)** Simulate a dataset from the binomial distribution, using
 the following steps:  
 Step 1) Simulate a predictor variable using runif or seq.  
-Step 2) Decide on a value for the intercept and slope and create the
-deterministic portion of your model.  
-Step 3) Use rbinom to simulate draws from a binomial distribution, using
+Step 2) Select a value for the intercept and slope and create the
+deterministic portion of your model. Describe why you selected the
+intercept that you did. (You may want to experiment with several
+intercept and slope values) Step 3) Put the deterministic portion of
+your model onto the “probability scale” using the plogis() function.
+Step 4) Use rbinom to simulate draws from a binomial distribution, using
 the deterministic model. Be sure to apply the logistic function to the
 deterministic portion of your model, before using rbinom.
+
+Which sorts of values does your simulation generate?
 
 **3c) (2 pts)** Plot your simulated response against your simulated
 predictor variable.
 
-**3d) (2 pts)** Run a binomial glm on your simulated data. How do your
+**3d) (2 pts)** Fit a binomial glm on your simulated data. How do your
 parameter estimates compare to the values you used to simulate this
 data?
 
-**3e) (2pts)** What role is the logit transformation/logistic function
+**3e) (1pts)** What role is the logit transformation/logistic function
 playing in the steps of your data simulation?
