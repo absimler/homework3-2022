@@ -133,11 +133,14 @@ Step 1) Simulate a predictor variable using runif or seq.
 Step 2) Select a value for the intercept and slope and create the
 deterministic portion of your model. Describe why you selected the
 intercept that you did. (You may want to experiment with several
-intercept and slope values) Step 3) Put the deterministic portion of
-your model onto the “probability scale” using the plogis() function.
+intercept and slope values) 
+Step 3) Put the deterministic portion of
+your model onto the “probability scale” using the plogis() function, so that:
+y <- rbinom(n, trials, p = plogis(a + b*x))
 Step 4) Use rbinom to simulate draws from a binomial distribution, using
 the deterministic model. Be sure to apply the logistic function to the
-deterministic portion of your model, before using rbinom.
+deterministic portion of your model, before using rbinom. Check the structure
+of the resulting "y" values.
 
 Which sorts of values does your simulation generate?
 
